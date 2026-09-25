@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Tags | HTML Tag Review</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>HTML Tag Review</h1>
+    <p>A reference guide to HTML tags: definitions, attributes and live examples.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="text.html">Text</a></li>
+      <li><a href="lists.html">Lists</a></li>
+      <li><a href="tables.html">Tables</a></li>
+      <li><a href="forms.html">Forms</a></li>
+      <li><a href="media.html" aria-current="page">Media</a></li>
+      <li><a href="semantic.html">Semantic &amp; Links</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Media Tags</h2>
+
+    <section>
+      <h3>&lt;img&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Embeds an image into the page. It is a void (self-closing) element.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;img&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>src</td><td>The URL or path of the image file to display.</td></tr>
+          <tr><td>alt</td><td>Describes the image for screen readers and shows if the image fails to load.</td></tr>
+          <tr><td>width</td><td>Sets the display width of the image in pixels.</td></tr>
+          <tr><td>height</td><td>Sets the display height of the image in pixels.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;img src="logo.png" alt="Site logo" width="120"&gt;</code></pre>
+
+      <div class="example-result">
+        <img src="https://placehold.co/120x80" alt="Placeholder logo" width="120">
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;audio&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Embeds a sound clip with built-in playback controls, using one or more <code>&lt;source&gt;</code> elements.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;audio&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>controls</td><td>Shows the browser's built-in play/pause/volume controls.</td></tr>
+          <tr><td>autoplay</td><td>Starts playback automatically when the page loads.</td></tr>
+          <tr><td>loop</td><td>Restarts the audio automatically after it ends.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;audio controls&gt;
+  &lt;source src="song.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;</code></pre>
+
+      <div class="example-result">
+        <audio controls>
+          <source src="" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;video&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Embeds a video clip with playback controls, using one or more <code>&lt;source&gt;</code> elements.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;video&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>controls</td><td>Shows the browser's built-in play/pause/volume controls.</td></tr>
+          <tr><td>width</td><td>Sets the display width of the video in pixels.</td></tr>
+          <tr><td>poster</td><td>An image shown before the video starts playing.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;video controls width="250"&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+
+      <div class="example-result">
+        <video controls width="250">
+          <source src="" type="video/mp4">
+          Your browser does not support the video element.
+        </video>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;source&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Specifies one media file for its parent <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code> or <code>&lt;picture&gt;</code> element, allowing several formats to be offered.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;source&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>src</td><td>The URL of the media file.</td></tr>
+          <tr><td>type</td><td>The MIME type of the file, so the browser can pick a supported one.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;video controls&gt;
+  &lt;source src="movie.webm" type="video/webm"&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+
+      <div class="example-result">
+        <p>See the &lt;video&gt; example above &mdash; it uses &lt;source&gt; internally.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;figure&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Groups an image (or other media) together with its caption as one self-contained unit.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;figure&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the figure.</td></tr>
+          <tr><td>class</td><td>Applies a CSS class for styling.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;figure&gt;
+  &lt;img src="cat.jpg" alt="A cat"&gt;
+  &lt;figcaption&gt;A curious cat&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+
+      <div class="example-result">
+        <figure>
+          <img src="https://placehold.co/100x80" alt="Placeholder cat photo">
+          <figcaption>A curious cat</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;figcaption&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Provides a caption describing the contents of its parent <code>&lt;figure&gt;</code>.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;figcaption&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the caption.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;figure&gt;
+  &lt;img src="chart.png" alt="Sales chart"&gt;
+  &lt;figcaption&gt;Fig. 1 &ndash; Quarterly sales&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+
+      <div class="example-result">
+        <figure>
+          <img src="https://placehold.co/100x80" alt="Placeholder chart">
+          <figcaption>Fig. 1 &ndash; Quarterly sales</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;picture&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Wraps multiple <code>&lt;source&gt;</code> elements and a fallback <code>&lt;img&gt;</code>, letting the browser pick the best image for the screen size or format.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;picture&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the picture element.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;picture&gt;
+  &lt;source srcset="large.jpg" media="(min-width: 600px)"&gt;
+  &lt;img src="small.jpg" alt="Responsive image"&gt;
+&lt;/picture&gt;</code></pre>
+
+      <div class="example-result">
+        <picture>
+          <img src="https://placehold.co/100x80" alt="Responsive placeholder image">
+        </picture>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;track&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Specifies timed text tracks, such as subtitles or captions, for an <code>&lt;audio&gt;</code> or <code>&lt;video&gt;</code> element.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;track&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>src</td><td>The URL of the subtitle/caption file (usually .vtt).</td></tr>
+          <tr><td>kind</td><td>The type of track: subtitles, captions, descriptions, etc.</td></tr>
+          <tr><td>srclang</td><td>The language of the track text, e.g. "en".</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;video controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  &lt;track src="subs-en.vtt" kind="subtitles" srclang="en" label="English"&gt;
+&lt;/video&gt;</code></pre>
+
+      <div class="example-result">
+        <p>See the &lt;video&gt; example above &mdash; &lt;track&gt; adds subtitles to it.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 HTML Tag Review &mdash; Advanced Web Design</p>
+  </footer>
+
+</body>
+</html>

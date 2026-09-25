@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Tags | HTML Tag Review</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>HTML Tag Review</h1>
+    <p>A reference guide to HTML tags: definitions, attributes and live examples.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="text.html">Text</a></li>
+      <li><a href="lists.html">Lists</a></li>
+      <li><a href="tables.html">Tables</a></li>
+      <li><a href="forms.html" aria-current="page">Forms</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="semantic.html">Semantic &amp; Links</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Form Tags</h2>
+
+    <section>
+      <h3>&lt;form&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>The container element for a set of interactive controls used to collect and submit user input.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;form&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>action</td><td>The URL that will process the submitted form data.</td></tr>
+          <tr><td>method</td><td>The HTTP method used to send the data (get or post).</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;form action="/submit" method="post"&gt;
+  ...
+&lt;/form&gt;</code></pre>
+
+      <div class="example-result">
+        <form action="#" method="post">
+          <p>Form fields would appear here.</p>
+        </form>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;input&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>A versatile, self-closing field that lets the user enter data. The <code>type</code> attribute controls what kind of control is shown (text, checkbox, date, etc.).</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;input&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>type</td><td>Sets the kind of control, e.g. text, email, checkbox, date.</td></tr>
+          <tr><td>name</td><td>Identifies the field when the form data is submitted.</td></tr>
+          <tr><td>placeholder</td><td>Shows hint text inside the field before the user types.</td></tr>
+          <tr><td>required</td><td>Marks the field as mandatory before the form can be submitted.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;input type="text" name="username" placeholder="Enter your name" required&gt;</code></pre>
+
+      <div class="example-result">
+        <input type="text" name="username" placeholder="Enter your name" required>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;label&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Provides a caption for a form control. Clicking the label focuses or activates its associated input.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;label&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>for</td><td>Connects the label to an input by matching the input's id.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email" name="email"&gt;</code></pre>
+
+      <div class="example-result">
+        <label for="email-demo">Email:</label>
+        <input type="email" id="email-demo" name="email">
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;textarea&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Creates a multi-line plain-text input control, useful for comments or longer messages.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;textarea&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>rows</td><td>Sets the visible number of text lines.</td></tr>
+          <tr><td>cols</td><td>Sets the visible width in characters.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;textarea rows="3" cols="30"&gt;Type your message here...&lt;/textarea&gt;</code></pre>
+
+      <div class="example-result">
+        <textarea rows="3" cols="30">Type your message here...</textarea>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;select&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Creates a drop-down list of choices, built from a set of <code>&lt;option&gt;</code> elements.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;select&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>name</td><td>Identifies the selected value when the form is submitted.</td></tr>
+          <tr><td>multiple</td><td>Allows more than one option to be selected at once.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;select name="fruit"&gt;
+  &lt;option value="apple"&gt;Apple&lt;/option&gt;
+  &lt;option value="banana"&gt;Banana&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+
+      <div class="example-result">
+        <select name="fruit">
+          <option value="apple">Apple</option>
+          <option value="banana">Banana</option>
+        </select>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;option&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Defines a single choice inside a <code>&lt;select&gt;</code> drop-down or a <code>&lt;datalist&gt;</code>.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;option&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>value</td><td>The data sent to the server when this option is chosen.</td></tr>
+          <tr><td>selected</td><td>Marks this option as chosen by default.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;select name="size"&gt;
+  &lt;option value="s"&gt;Small&lt;/option&gt;
+  &lt;option value="m" selected&gt;Medium&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+
+      <div class="example-result">
+        <select name="size">
+          <option value="s">Small</option>
+          <option value="m" selected>Medium</option>
+        </select>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;button&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Creates a clickable button, commonly used to submit or reset a form, or to run custom scripts.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;button&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>type</td><td>Sets the button's behavior: submit, reset, or button.</td></tr>
+          <tr><td>disabled</td><td>Prevents the button from being clicked.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;button type="submit"&gt;Send&lt;/button&gt;</code></pre>
+
+      <div class="example-result">
+        <button type="button">Send</button>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;fieldset&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Groups related form controls together inside a labeled box, improving structure and accessibility.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;fieldset&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>disabled</td><td>Disables every control inside the fieldset.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Contact Info&lt;/legend&gt;
+  &lt;input type="text" placeholder="Name"&gt;
+&lt;/fieldset&gt;</code></pre>
+
+      <div class="example-result">
+        <fieldset>
+          <legend>Contact Info</legend>
+          <input type="text" placeholder="Name">
+        </fieldset>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;legend&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Provides a caption for the parent <code>&lt;fieldset&gt;</code>, describing what the grouped controls are for.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;legend&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the legend.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Payment Details&lt;/legend&gt;
+&lt;/fieldset&gt;</code></pre>
+
+      <div class="example-result">
+        <fieldset>
+          <legend>Payment Details</legend>
+        </fieldset>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;datalist&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Provides a list of predefined suggestions for an associated <code>&lt;input&gt;</code>, shown as autocomplete options.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;datalist&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Referenced by an input's list attribute to link the suggestions.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;input list="browsers" name="browser"&gt;
+&lt;datalist id="browsers"&gt;
+  &lt;option value="Chrome"&gt;
+  &lt;option value="Firefox"&gt;
+&lt;/datalist&gt;</code></pre>
+
+      <div class="example-result">
+        <input list="browsers-demo" name="browser">
+        <datalist id="browsers-demo">
+          <option value="Chrome">
+          <option value="Firefox">
+        </datalist>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 HTML Tag Review &mdash; Advanced Web Design</p>
+  </footer>
+
+</body>
+</html>

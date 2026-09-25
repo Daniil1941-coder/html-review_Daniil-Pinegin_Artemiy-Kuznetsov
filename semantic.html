@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semantic &amp; Link Tags | HTML Tag Review</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>HTML Tag Review</h1>
+    <p>A reference guide to HTML tags: definitions, attributes and live examples.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="text.html">Text</a></li>
+      <li><a href="lists.html">Lists</a></li>
+      <li><a href="tables.html">Tables</a></li>
+      <li><a href="forms.html">Forms</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="semantic.html" aria-current="page">Semantic &amp; Links</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Semantic &amp; Link Tags</h2>
+
+    <section>
+      <h3>&lt;a&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Creates a hyperlink to another page, a resource, an email address, or a location within the same page.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;a&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>href</td><td>The destination URL the link points to.</td></tr>
+          <tr><td>target</td><td>Where to open the link, e.g. "_blank" for a new tab.</td></tr>
+          <tr><td>rel</td><td>Describes the relationship to the target, e.g. "noopener".</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;a href="tables.html"&gt;Go to Tables page&lt;/a&gt;</code></pre>
+
+      <div class="example-result">
+        <a href="tables.html">Go to Tables page</a>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;header&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Represents introductory content for a page or section, typically containing a heading, logo, or tagline.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;header&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the header.</td></tr>
+          <tr><td>class</td><td>Applies a CSS class for styling.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;header&gt;
+  &lt;h1&gt;My Site&lt;/h1&gt;
+&lt;/header&gt;</code></pre>
+
+      <div class="example-result">
+        <header>
+          <h4>My Site</h4>
+        </header>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;nav&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Marks a block of navigation links, such as a main menu or breadcrumb trail.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;nav&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the navigation block.</td></tr>
+          <tr><td>class</td><td>Applies a CSS class for styling.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+
+      <div class="example-result">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;main&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Represents the dominant, unique content of the page. There should be only one visible <code>&lt;main&gt;</code> per page.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;main&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the main content area.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;main&gt;
+  &lt;p&gt;This is the primary content of the page.&lt;/p&gt;
+&lt;/main&gt;</code></pre>
+
+      <div class="example-result">
+        <p>This is the primary content of the page (this whole page's &lt;main&gt; is a live example).</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;section&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Groups a thematic block of content, usually with its own heading, such as a chapter or a tab panel.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;section&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the section, often used as a link target.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;section&gt;
+  &lt;h2&gt;About Us&lt;/h2&gt;
+  &lt;p&gt;We build websites.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+
+      <div class="example-result">
+        <p>Every tag block on this page is itself wrapped in a &lt;section&gt;.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;article&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Represents a self-contained piece of content that could be distributed independently, such as a blog post or news story.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;article&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the article.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;article&gt;
+  &lt;h2&gt;Breaking News&lt;/h2&gt;
+  &lt;p&gt;Something happened today.&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+
+      <div class="example-result">
+        <article>
+          <h4>Breaking News</h4>
+          <p>Something happened today.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;aside&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Represents content that is tangentially related to the surrounding content, such as a sidebar or a pull quote.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;aside&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the aside content.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;aside&gt;
+  &lt;p&gt;Related: check out our Tables page.&lt;/p&gt;
+&lt;/aside&gt;</code></pre>
+
+      <div class="example-result">
+        <aside>
+          <p>Related: check out our Tables page.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;footer&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Represents footer content for a page or section, typically containing copyright, contact info, or related links.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;footer&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the footer.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;footer&gt;
+  &lt;p&gt;&amp;copy; 2026 My Site&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+
+      <div class="example-result">
+        <p>See the bottom of this page &mdash; it is built with a &lt;footer&gt; element.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;div&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>A generic block-level container with no semantic meaning, used to group elements for layout or styling purposes.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;div&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the div.</td></tr>
+          <tr><td>class</td><td>Applies a CSS class to style the group.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;div class="example-result"&gt;
+  &lt;p&gt;Grouped content&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+      <div class="example-result">
+        <div>
+          <p>Grouped content</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;address&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Provides contact information for the author or owner of a page or article, often rendered in italics.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;address&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the address block.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;address&gt;
+  Contact: &lt;a href="mailto:info@example.com"&gt;info@example.com&lt;/a&gt;
+&lt;/address&gt;</code></pre>
+
+      <div class="example-result">
+        <address>
+          Contact: <a href="mailto:info@example.com">info@example.com</a>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 HTML Tag Review &mdash; Advanced Web Design</p>
+  </footer>
+
+</body>
+</html>

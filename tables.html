@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Tags | HTML Tag Review</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>HTML Tag Review</h1>
+    <p>A reference guide to HTML tags: definitions, attributes and live examples.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="text.html">Text</a></li>
+      <li><a href="lists.html">Lists</a></li>
+      <li><a href="tables.html" aria-current="page">Tables</a></li>
+      <li><a href="forms.html">Forms</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="semantic.html">Semantic &amp; Links</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Table Tags</h2>
+
+    <section>
+      <h3>&lt;table&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>The root element that creates a table for displaying tabular data.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;table&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the table.</td></tr>
+          <tr><td>class</td><td>Applies a CSS class to style the table.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;table&gt;
+  &lt;tr&gt;&lt;td&gt;Row 1&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+      <div class="example-result">
+        <table>
+          <tr><td>Row 1</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;caption&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Provides a title or caption for the table, describing what the data represents.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;caption&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the caption.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;table&gt;
+  &lt;caption&gt;Monthly Sales&lt;/caption&gt;
+  &lt;tr&gt;&lt;td&gt;January&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+      <div class="example-result">
+        <table>
+          <caption>Monthly Sales</caption>
+          <tr><td>January</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;thead&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Groups the header row(s) of a table, separating column titles from the data.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;thead&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the header group.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+&lt;/table&gt;</code></pre>
+
+      <div class="example-result">
+        <table>
+          <thead>
+            <tr><th>Name</th></tr>
+          </thead>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;tbody&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Groups the main body rows of a table, containing the actual data rows.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;tbody&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the body group.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Anna&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+      <div class="example-result">
+        <table>
+          <tbody>
+            <tr><td>Anna</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;tfoot&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Groups the footer row(s) of a table, often used for totals or summaries.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;tfoot&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the footer group.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;table&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;&lt;td&gt;Total: $50&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+
+      <div class="example-result">
+        <table>
+          <tfoot>
+            <tr><td>Total: $50</td></tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;tr&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Defines a single row of cells within a table.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;tr&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the row.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;table&gt;
+  &lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+      <div class="example-result">
+        <table>
+          <tr><td>A</td><td>B</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;th&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Defines a header cell in a table. Browsers render its content bold and centered by default.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;th&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>scope</td><td>States whether the header applies to a "col" or a "row".</td></tr>
+          <tr><td>colspan</td><td>Makes the header span multiple columns.</td></tr>
+          <tr><td>rowspan</td><td>Makes the header span multiple rows.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;table&gt;
+  &lt;tr&gt;&lt;th scope="col"&gt;City&lt;/th&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+      <div class="example-result">
+        <table>
+          <tr><th scope="col">City</th></tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;td&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Defines a standard data cell within a table row.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;td&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>colspan</td><td>Makes the cell span multiple columns.</td></tr>
+          <tr><td>rowspan</td><td>Makes the cell span multiple rows.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;table&gt;
+  &lt;tr&gt;&lt;td colspan="2"&gt;Spans two columns&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+      <div class="example-result">
+        <table>
+          <tr><td colspan="2">Spans two columns</td></tr>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 HTML Tag Review &mdash; Advanced Web Design</p>
+  </footer>
+
+</body>
+</html>

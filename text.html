@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Tags | HTML Tag Review</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>HTML Tag Review</h1>
+    <p>A reference guide to HTML tags: definitions, attributes and live examples.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="text.html" aria-current="page">Text</a></li>
+      <li><a href="lists.html">Lists</a></li>
+      <li><a href="tables.html">Tables</a></li>
+      <li><a href="forms.html">Forms</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="semantic.html">Semantic &amp; Links</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Text Tags</h2>
+
+    <section>
+      <h3>&lt;h1&gt; &ndash; &lt;h6&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Define six levels of section headings, from most important (<code>&lt;h1&gt;</code>) to least important (<code>&lt;h6&gt;</code>). They give a page its outline and are used by screen readers and search engines to understand structure.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;h1&gt;&ndash;&lt;h6&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Gives the heading a unique identifier, often used as a jump-link target.</td></tr>
+          <tr><td>class</td><td>Attaches a CSS class for styling from style.css.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h2&gt;Section Title&lt;/h2&gt;
+&lt;h3&gt;Subsection Title&lt;/h3&gt;</code></pre>
+
+      <div class="example-result">
+        <h1>Main Title</h1>
+        <h2>Section Title</h2>
+        <h3>Subsection Title</h3>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;p&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Represents a paragraph of text. Browsers automatically add space before and after each paragraph.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;p&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the paragraph.</td></tr>
+          <tr><td>class</td><td>Applies a CSS class to the paragraph.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;p&gt;This is a simple paragraph of text.&lt;/p&gt;</code></pre>
+
+      <div class="example-result">
+        <p>This is a simple paragraph of text.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;strong&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Marks text with strong importance. Browsers render it in bold by default.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;strong&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the element.</td></tr>
+          <tr><td>class</td><td>Applies a CSS class for styling.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;p&gt;This word is &lt;strong&gt;important&lt;/strong&gt;.&lt;/p&gt;</code></pre>
+
+      <div class="example-result">
+        <p>This word is <strong>important</strong>.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;em&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Marks text with stress emphasis. Browsers render it in italics by default.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;em&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the element.</td></tr>
+          <tr><td>class</td><td>Applies a CSS class for styling.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;p&gt;I &lt;em&gt;really&lt;/em&gt; mean it.&lt;/p&gt;</code></pre>
+
+      <div class="example-result">
+        <p>I <em>really</em> mean it.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;br&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Inserts a single line break inside a block of text, without starting a new paragraph. It is a void (self-closing) element.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;br&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the element.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;p&gt;First line&lt;br&gt;Second line&lt;/p&gt;</code></pre>
+
+      <div class="example-result">
+        <p>First line<br>Second line</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;span&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>A generic inline container with no default meaning, used to group text so it can be styled or targeted with CSS/JavaScript.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;span&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the element.</td></tr>
+          <tr><td>class</td><td>Applies a CSS class to style only that piece of text.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;p&gt;My favorite color is &lt;span class="example-result"&gt;teal&lt;/span&gt;.&lt;/p&gt;</code></pre>
+
+      <div class="example-result">
+        <p>My favorite color is <span>teal</span>.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;mark&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Highlights text that is relevant to the current context, typically shown with a yellow background.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;mark&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the element.</td></tr>
+          <tr><td>class</td><td>Applies a CSS class for styling.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;p&gt;Please &lt;mark&gt;highlight&lt;/mark&gt; this part.&lt;/p&gt;</code></pre>
+
+      <div class="example-result">
+        <p>Please <mark>highlight</mark> this part.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;abbr&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Marks an abbreviation or acronym. The <code>title</code> attribute usually holds the full expansion, shown as a tooltip on hover.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;abbr&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>title</td><td>Provides the full text the abbreviation stands for, shown as a tooltip.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</code></pre>
+
+      <div class="example-result">
+        <p><abbr title="HyperText Markup Language">HTML</abbr></p>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;blockquote&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Marks a block of text quoted from another source, usually rendered with indentation.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;blockquote&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>cite</td><td>A URL pointing to the source of the quotation.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;blockquote cite="https://example.com"&gt;
+  The only way to do great work is to love what you do.
+&lt;/blockquote&gt;</code></pre>
+
+      <div class="example-result">
+        <blockquote cite="https://example.com">The only way to do great work is to love what you do.</blockquote>
+      </div>
+    </section>
+
+    <section>
+      <h3>&lt;small&gt;</h3>
+
+      <h4>Definition</h4>
+      <p>Represents side comments such as fine print, disclaimers, or legal text, typically rendered in a smaller font size.</p>
+
+      <h4>Attributes</h4>
+      <table>
+        <caption>Attributes of &lt;small&gt;</caption>
+        <thead>
+          <tr><th>Attribute</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>Uniquely identifies the element.</td></tr>
+          <tr><td>class</td><td>Applies a CSS class for styling.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre><code>&lt;p&gt;Price: $9.99 &lt;small&gt;(tax not included)&lt;/small&gt;&lt;/p&gt;</code></pre>
+
+      <div class="example-result">
+        <p>Price: $9.99 <small>(tax not included)</small></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 HTML Tag Review &mdash; Advanced Web Design</p>
+  </footer>
+
+</body>
+</html>
