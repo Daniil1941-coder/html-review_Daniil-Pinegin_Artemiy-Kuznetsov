@@ -4,7 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTML Tag Review | Home</title>
-  <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Onest:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+  <script>
+    (function (d) {
+      d.classList.add("fx-js");
+      setTimeout(function () { d.classList.add("is-ready"); }, 3000);
+    })(document.documentElement);
+  </script>
 </head>
 <body>
 
@@ -79,6 +88,337 @@
   <footer>
     <p>&copy; 2026 HTML Tag Review &mdash; Advanced Web Design</p>
   </footer>
+
+
+  <script>
+    /* Interactive layer: intro + page fade, hero, pill nav, TOC,
+       code windows, home bento, scroll reveal, magnetic buttons, back-to-top. */
+    (function () {
+      var doc = document.documentElement;
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var finePointer = window.matchMedia("(pointer: fine)").matches;
+      var header = document.querySelector("body > header");
+      var nav = document.querySelector("body > nav");
+      var main = document.querySelector("main");
+      var footer = document.querySelector("body > footer");
+      var pages = [
+        { href: "text.html", tags: ["h1–h6", "p", "strong", "em", "br", "span", "mark", "abbr", "blockquote", "small"] },
+        { href: "lists.html", tags: ["ul", "ol", "li", "dl", "dt", "dd"] },
+        { href: "tables.html", tags: ["table", "caption", "thead", "tbody", "tfoot", "tr", "th", "td"] },
+        { href: "forms.html", tags: ["form", "input", "label", "textarea", "select", "option", "button", "fieldset", "legend", "datalist"] },
+        { href: "media.html", tags: ["img", "audio", "video", "source", "figure", "figcaption", "picture", "track"] },
+        { href: "semantic.html", tags: ["a", "header", "nav", "main", "section", "article", "aside", "footer", "div", "address"] }
+      ];
+
+      function el(tag, cls, html) {
+        var node = document.createElement(tag);
+        if (cls) node.className = cls;
+        if (html != null) node.innerHTML = html;
+        return node;
+      }
+
+      function pad(n) {
+        return (n < 10 ? "0" : "") + n;
+      }
+
+      /* ---------- hero ---------- */
+      var h1 = header.querySelector("h1");
+      var title = h1.textContent.trim();
+      var words = title.split(/\s+/);
+      h1.setAttribute("aria-label", title);
+      h1.innerHTML = "";
+      var charIndex = 0;
+      words.forEach(function (word, w) {
+        var wrap = el("span", "fx-word" + (w === words.length - 1 ? " fx-word--outline" : ""));
+        wrap.setAttribute("aria-hidden", "true");
+        word.split("").forEach(function (ch) {
+          var c = el("span", "fx-char");
+          c.textContent = ch;
+          c.style.transitionDelay = (0.1 + charIndex++ * 0.04) + "s";
+          wrap.appendChild(c);
+        });
+        h1.appendChild(wrap);
+        if (w < words.length - 1) h1.appendChild(document.createTextNode(" "));
+      });
+
+      header.insertBefore(el("div", "fx-eyebrow", "Advanced Web Design &middot; 2026"), h1);
+      header.insertBefore(el("span", "fx-blob fx-blob--a"), header.firstChild);
+      header.insertBefore(el("span", "fx-blob fx-blob--b"), header.firstChild);
+
+      var allTags = [];
+      pages.forEach(function (p) { allTags = allTags.concat(p.tags); });
+      var items = allTags.map(function (t) {
+        return '<span class="fx-marquee__item">&lt;' + t + "&gt;</span>";
+      }).join("");
+      var marquee = el("div", "fx-marquee", '<div class="fx-marquee__track">' + items + items + "</div>");
+      marquee.setAttribute("aria-hidden", "true");
+      var tagTotal = allTags.length;
+      header.insertBefore(el("div", "fx-meta",
+        "<span>(Reference guide)</span><span>" + pad(pages.length) + " pages &mdash; " + tagTotal +
+        " tags</span><span>Scroll &darr;</span>"), null);
+      header.appendChild(marquee);
+
+      header.addEventListener("pointermove", function (e) {
+        var r = header.getBoundingClientRect();
+        header.style.setProperty("--mx", (e.clientX - r.left) + "px");
+        header.style.setProperty("--my", (e.clientY - r.top) + "px");
+      });
+
+      /* ---------- pill navigation ---------- */
+      var navList = nav.querySelector("ul");
+      var navLinks = Array.prototype.slice.call(navList.querySelectorAll("a"));
+      var current = nav.querySelector("a[aria-current='page']") || navLinks[0];
+      var pill = el("span", "fx-pill");
+      navList.insertBefore(pill, navList.firstChild);
+      nav.classList.add("fx-nav-js");
+
+      function movePill(link, instant) {
+        var li = link.parentNode;
+        if (instant) pill.style.transition = "none";
+        pill.style.width = li.offsetWidth + "px";
+        pill.style.transform = "translateX(" + li.offsetLeft + "px)";
+        navLinks.forEach(function (a) { a.classList.toggle("is-on", a === link); });
+        if (instant) { pill.offsetWidth; pill.style.transition = ""; }
+      }
+
+      movePill(current, true);
+      if (current.parentNode.offsetLeft > navList.clientWidth / 2) {
+        navList.scrollLeft = current.parentNode.offsetLeft - 20;
+      }
+      navLinks.forEach(function (a) {
+        a.addEventListener("pointerenter", function () { movePill(a); });
+        a.addEventListener("focus", function () { movePill(a); });
+      });
+      navList.addEventListener("pointerleave", function () { movePill(current); });
+      window.addEventListener("resize", function () { movePill(current, true); });
+      if (document.fonts) document.fonts.ready.then(function () { movePill(current, true); });
+
+      /* ---------- page intro + simple fade between pages ---------- */
+      requestAnimationFrame(function () { doc.classList.add("is-ready"); });
+
+      document.addEventListener("click", function (e) {
+        var a = e.target.closest("a[href$='.html']");
+        if (!a || reduce || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || a.target) return;
+        e.preventDefault();
+        doc.classList.add("is-leaving");
+        setTimeout(function () { window.location.href = a.href; }, 250);
+      });
+
+      window.addEventListener("pageshow", function (e) {
+        if (e.persisted) doc.classList.remove("is-leaving");
+      });
+
+      /* ---------- tag pages: TOC + numbered sections ---------- */
+      var sections = Array.prototype.slice.call(main.querySelectorAll(":scope > section"));
+      var tagHeads = main.querySelectorAll(":scope > section > h3:first-child");
+      var tocLinks = [];
+      if (tagHeads.length) {
+        var toc = el("ul", "fx-toc");
+        toc.setAttribute("aria-label", "Tags on this page");
+        tagHeads.forEach(function (h3, i) {
+          var id = "tag-" + h3.textContent.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "").toLowerCase();
+          h3.id = id;
+          var li = el("li");
+          li.style.transitionDelay = (0.75 + i * 0.04) + "s";
+          var link = el("a");
+          link.href = "#" + id;
+          link.textContent = h3.textContent;
+          li.appendChild(link);
+          toc.appendChild(li);
+          tocLinks.push(link);
+          h3.insertBefore(el("span", "fx-num", pad(i + 1) + " / " + pad(tagHeads.length)), h3.firstChild);
+        });
+        var pageTitle = main.querySelector(":scope > h2");
+        pageTitle.insertAdjacentElement("afterend", toc);
+        var here = location.pathname.split("/").pop();
+        var chapter = pages.map(function (p) { return p.href; }).indexOf(here);
+        var label = el("div", "fx-label",
+          (chapter > -1 ? "<b>(" + pad(chapter + 1) + ")</b> Chapter &mdash; " : "") + tagHeads.length + " tags");
+        pageTitle.parentNode.insertBefore(label, pageTitle);
+
+        toc.addEventListener("click", function (e) {
+          var link = e.target.closest("a");
+          if (!link) return;
+          e.preventDefault();
+          document.querySelector(link.hash).scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+          history.replaceState(null, "", link.hash);
+        });
+      }
+
+      /* ---------- code window + side-by-side result ---------- */
+      main.querySelectorAll("pre").forEach(function (pre) {
+        var win = el("div", "fx-code");
+        var bar = el("div", "fx-code__bar", '<i></i><i></i><i></i><span class="fx-code__lang">index.html</span>');
+        var btn = el("button", "fx-copy", "Copy");
+        btn.type = "button";
+        bar.appendChild(btn);
+        pre.parentNode.insertBefore(win, pre);
+        win.appendChild(bar);
+        win.appendChild(pre);
+
+        var result = win.nextElementSibling;
+        if (result && result.classList.contains("example-result")) {
+          var pair = el("div", "fx-example");
+          win.parentNode.insertBefore(pair, win);
+          pair.appendChild(win);
+          pair.appendChild(result);
+        }
+
+        btn.addEventListener("click", function () {
+          var done = function () {
+            btn.textContent = "Copied";
+            btn.classList.add("is-copied");
+            setTimeout(function () { btn.textContent = "Copy"; btn.classList.remove("is-copied"); }, 1400);
+          };
+          if (navigator.clipboard) navigator.clipboard.writeText(pre.innerText).then(done, done);
+          else done();
+        });
+      });
+
+      /* ---------- home: stats + bento built from the pages table ---------- */
+      var homeTable = main.querySelector("section table");
+      if (!tagHeads.length && homeTable) {
+        document.body.classList.add("fx-home");
+        main.querySelectorAll(":scope > section > h2").forEach(function (h2, i) {
+          h2.parentNode.insertBefore(el("div", "fx-label", "<b>(" + pad(i + 1) + ")</b> " +
+            (i ? "Index" : "Manifesto")), h2);
+        });
+        var total = pages.reduce(function (s, p) { return s + p.tags.length; }, 0);
+        var stats = el("div", "fx-stats");
+        [[pages.length, "pages"], [total, "tags covered"], [3, "parts per tag"]].forEach(function (s) {
+          stats.appendChild(el("div", "fx-stat", '<b data-count="' + s[0] + '">0</b><span>' + s[1] + "</span>"));
+        });
+        main.querySelector("section").appendChild(stats);
+
+        var cards = el("div", "fx-cards");
+        homeTable.querySelectorAll("tbody tr").forEach(function (row, i) {
+          var link = row.querySelector("a");
+          var info = pages.filter(function (p) { return p.href === link.getAttribute("href"); })[0];
+          var tagList = info ? info.tags : [];
+          var card = el("a", "fx-card");
+          card.href = link.getAttribute("href");
+          card.innerHTML =
+            '<span class="fx-card__top">' + pad(i + 1) + " &middot; " + tagList.length + " tags</span>" +
+            '<span class="fx-card__arrow">&rarr;</span>' +
+            '<span class="fx-card__num" aria-hidden="true">' + pad(i + 1) + "</span>" +
+            '<span class="fx-card__title">' + link.innerHTML + "</span>" +
+            '<span class="fx-card__desc">' + row.cells[1].innerHTML + "</span>" +
+            '<span class="fx-card__tags" aria-hidden="true">' +
+            tagList.map(function (t) { return "<span>&lt;" + t + "&gt;</span>"; }).join("") + "</span>";
+          cards.appendChild(card);
+        });
+        homeTable.classList.add("fx-sr");
+        homeTable.insertAdjacentElement("afterend", cards);
+      }
+
+      /* ---------- footer title ---------- */
+      var big = el("span", "fx-footer-title", title);
+      big.setAttribute("aria-hidden", "true");
+      footer.insertBefore(big, footer.firstChild);
+
+      /* ---------- pointer-follow fill on cards ---------- */
+      main.addEventListener("pointermove", function (e) {
+        var card = e.target.closest(".fx-card");
+        if (!card) return;
+        var r = card.getBoundingClientRect();
+        card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+        card.style.setProperty("--my", (e.clientY - r.top) + "px");
+      });
+
+      /* ---------- scroll reveal + count-up + active TOC ---------- */
+      var revealTargets = main.querySelectorAll(":scope > section, .fx-card, .fx-stat");
+      if (!reduce && "IntersectionObserver" in window) {
+        revealTargets.forEach(function (node) {
+          node.classList.add("fx-reveal");
+          if (node.classList.contains("fx-card") || node.classList.contains("fx-stat")) {
+            var idx = Array.prototype.indexOf.call(node.parentNode.children, node);
+            node.style.transitionDelay = (idx % 3) * 0.1 + "s";
+          }
+        });
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            entry.target.querySelectorAll("[data-count]").forEach(countUp);
+            io.unobserve(entry.target);
+          });
+        }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+        /* wait for the intro so the first blocks animate in view */
+        var observe = function () { revealTargets.forEach(function (node) { io.observe(node); }); };
+        if (doc.classList.contains("is-ready")) observe();
+        else new MutationObserver(function (m, obs) {
+          if (doc.classList.contains("is-ready")) { obs.disconnect(); setTimeout(observe, 300); }
+        }).observe(doc, { attributes: true, attributeFilter: ["class"] });
+      } else {
+        main.querySelectorAll("[data-count]").forEach(function (b) { b.textContent = b.dataset.count; });
+      }
+
+      function countUp(b) {
+        var end = +b.dataset.count;
+        var t0 = performance.now();
+        (function tick(now) {
+          var p = Math.min(1, (now - t0) / 1400);
+          b.textContent = Math.round((1 - Math.pow(1 - p, 3)) * end);
+          if (p < 1) requestAnimationFrame(tick);
+        })(t0);
+      }
+
+      if (tocLinks.length && "IntersectionObserver" in window) {
+        var spy = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var idx = sections.indexOf(entry.target);
+            tocLinks.forEach(function (l, i) { l.classList.toggle("is-active", i === idx); });
+          });
+        }, { rootMargin: "-45% 0px -50% 0px" });
+        sections.forEach(function (s) { spy.observe(s); });
+      }
+
+      /* ---------- progress bar + back to top ---------- */
+      var bar = el("div", "fx-progress");
+      document.body.appendChild(bar);
+      var top = el("button", "fx-top",
+        '<svg viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="25"/></svg>');
+      top.type = "button";
+      top.setAttribute("aria-label", "Back to top");
+      document.body.appendChild(top);
+      var ring = top.querySelector("circle");
+      var len = 2 * Math.PI * 25;
+      ring.style.strokeDasharray = len;
+      top.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+      });
+
+      var ticking = false;
+      function onScroll() {
+        var max = doc.scrollHeight - window.innerHeight;
+        var p = max > 0 ? window.scrollY / max : 0;
+        bar.style.transform = "scaleX(" + p + ")";
+        ring.style.strokeDashoffset = len * (1 - p);
+        top.classList.toggle("is-shown", window.scrollY > 500);
+        ticking = false;
+      }
+      window.addEventListener("scroll", function () {
+        if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+      }, { passive: true });
+      onScroll();
+
+      /* ---------- magnetic buttons ---------- */
+      if (finePointer && !reduce) {
+        document.querySelectorAll("main button, .fx-top, .fx-card__arrow").forEach(function (m) {
+          var host = m.closest(".fx-card") || m;
+          host.addEventListener("pointermove", function (e) {
+            var r = m.getBoundingClientRect();
+            var x = (e.clientX - r.left - r.width / 2) * 0.25;
+            var y = (e.clientY - r.top - r.height / 2) * 0.3;
+            if (host !== m) { x = Math.max(-14, Math.min(14, x)); y = Math.max(-14, Math.min(14, y)); }
+            m.style.translate = x + "px " + y + "px";
+          });
+          host.addEventListener("pointerleave", function () { m.style.translate = ""; });
+        });
+      }
+    })();
+  </script>
 
 </body>
 </html>
