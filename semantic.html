@@ -31,6 +31,7 @@
       <li><a href="forms.html">Forms</a></li>
       <li><a href="media.html">Media</a></li>
       <li><a href="semantic.html" aria-current="page">Semantic &amp; Links</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
     </ul>
   </nav>
 
@@ -543,7 +544,7 @@
           var card = el("a", "fx-card");
           card.href = link.getAttribute("href");
           card.innerHTML =
-            '<span class="fx-card__top">' + pad(i + 1) + " &middot; " + tagList.length + " tags</span>" +
+            '<span class="fx-card__top">' + pad(i + 1) + " &middot; " + (tagList.length ? tagList.length + " tags" : "25 questions") + "</span>" +
             '<span class="fx-card__arrow">&rarr;</span>' +
             '<span class="fx-card__num" aria-hidden="true">' + pad(i + 1) + "</span>" +
             '<span class="fx-card__title">' + link.innerHTML + "</span>" +
